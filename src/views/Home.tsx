@@ -1,12 +1,12 @@
 import styled from "styled-components"
 import React from "react";
-// import SVG from "../components/SVG"
-import {NavLink} from "react-router-dom"
+// import {NavLink} from "react-router-dom"
 import FourEntry from "../components/FourEntry";
 import RecPlayList from "../components/RecPlayList";
+import SingleMusic from "../components/SingleMusic";
+
 import axios from 'axios'
 
-// import ReactDOM from "react-dom"
 
 const HomeBody = styled.div`
   margin-left: 176px;
@@ -15,26 +15,36 @@ const HomeBody = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  .newSongTitle {
+    font-weight:bold;font-size:24px;line-height:24px;text-align: left;
+  }
 `
 
-
-class Home extends React.Component<{},{ list ?:object }> {
+class Home extends React.Component<{},{ recList?:object,newSongList?:object }> {
     constructor(props:any) {
         super(props);
         this.state={
-            list: []
+            recList: [],
+            newSongList: []
         }
     }
     componentDidMount() {
         const that = this;
         axios.get('http://121.36.252.80:3000/top/playlist/欧美?limit=7')
-        .then(res => {
-            console.log(res.data.playlists)
-            that.setState({
-                list:res.data.playlists
-            })
-        })
-        .catch()
+             .then(res => {
+                 that.setState({
+                     recList: res.data.playlists
+                 })
+             })
+             .catch();
+        axios.get('http://121.36.252.80:3000/top/song?type=0')//类型：全部0华语7欧美96日本8韩国16
+             .then(res => {
+                 console.log(res.data.data.slice(0, 10))
+                 that.setState({
+                     newSongList: res.data.data.slice(0, 10)
+                 })
+             })
+             .catch()
     }
     render() {
         return (
@@ -42,7 +52,9 @@ class Home extends React.Component<{},{ list ?:object }> {
                      {/*<div className="lunbotu"></div>*/}
                 <FourEntry/>
 
-                <RecPlayList list={this.state.list}/>
+                <RecPlayList list={this.state.recList}/>
+
+                <SingleMusic list={this.state.newSongList}/>
             </HomeBody>
         )
     }

@@ -21,60 +21,59 @@ const RecommendPlaylist= styled.div`
     font-size: 12px;
     justify-content: space-between;
     flex-wrap: wrap;
-  }
-
-  li {
-    width: 168px;
-    height: 215px;
-    margin-bottom: 30px;
-  }
-  li img {
-    border-radius: 6px;
-    width: 168px;
-    height: 168px;
-  }
-  li a {
-    display: block;
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    font-weight: bold;
-    font-size: 15px;
-  }
-  ul > li:first-child {
-    width: 360px;
-    height: 240px;
-    position: relative;
-  }
-  ul > li:first-child div {
-    width: 360px;
-    display: flex;
-    border-radius: 5px;
-    align-items: center;
-    height: 240px;
-    overflow: hidden;
-  }
-  ul > li:first-child img {
-    width: 360px;
-    height: 360px;
-  }
-  ul > li:first-child a {
-    display: flex;
-    width: 100%;
-    height: 60px;
-    background-color: rgba(40,40,40,.9);
-    position: absolute;
-    border-radius: 0 0 5px 5px;
-    top: 180px;
-    color: white;
-    align-items: center;
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: unset;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    li {
+      width: 168px;
+      height: 215px;
+      margin-bottom: 30px;
+      img {
+        border-radius: 6px;
+        width: 168px;
+        height: 168px;
+      }
+      a {
+        display: block;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-weight: bold;
+        font-size: 15px;
+      }
+    }
+    > li:first-child {
+      width: 360px;
+      height: 240px;
+      position: relative;
+      div {
+        width: 360px;
+        display: flex;
+        border-radius: 5px;
+        align-items: center;
+        height: 240px;
+        overflow: hidden;
+      }
+      img {
+        width: 360px;
+        height: 360px;
+      }
+      a {
+        display: flex;
+        width: 100%;
+        height: 60px;
+        background-color: rgba(40,40,40,.9);
+        position: absolute;
+        border-radius: 0 0 5px 5px;
+        top: 180px;
+        color: white;
+        align-items: center;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: unset;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+    }
   }
 `
 
