@@ -4,10 +4,16 @@ import styled from "styled-components"
 import {HashRouter as Router, Switch, Route, Redirect} from "react-router-dom"
 import ControlBar from "./components/ControlBar"
 import NavList from "./components/NavList"
-
 import Home from "./views/Home"
 
-const AppWrapper = styled.div`color:#333;`;
+const AppWrapper = styled.div`
+  color:#333;
+  .flex {
+    display: flex;
+    padding-bottom: 72px;
+    min-height: 100vh;
+  }
+`;
 
 function App() {
   return (
@@ -16,20 +22,30 @@ function App() {
             <Switch>
                 <Route path="/home">
                     <ControlBar />
-                    <NavList />
-                    <Home></Home>
+                    <div className="flex">
+                        <NavList />
+                        <Home />
+                    </div>
                 </Route>
-                <Route path="/playlist">
+                <Route path="/playlist/:id">
                     <ControlBar />
-                    <NavList />
+                    <div className="flex">
+                        <NavList />
+                        <Home />
+                    </div>
                 </Route>
                 <Route path="/rank">
                     <ControlBar />
-                    <NavList />
+                    <div className="flex">
+                        <NavList />
+                    </div>
                 </Route>
                 <Route path="/fav">
                     <ControlBar />
-                    <NavList />
+                    <div className="flex">
+                        <NavList />
+                        <Home />
+                    </div>
                 </Route>
                 <Redirect exact from="/" to="/home" />
 

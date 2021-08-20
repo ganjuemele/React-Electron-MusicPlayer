@@ -4,21 +4,22 @@ import React from "react";
 import FourEntry from "../components/FourEntry";
 import RecPlayList from "../components/RecPlayList";
 import SingleMusic from "../components/SingleMusic";
-
 import axios from 'axios'
 
-
 const HomeBody = styled.div`
-  margin-left: 176px;
+  //margin-left: 176px;
   font-size:60px;
   min-height:100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1;
+  padding:0 30px;
   .newSongTitle {
-    font-weight:bold;font-size:24px;line-height:24px;text-align: left;
+    font-weight:bold;font-size:24px;
+    line-height:24px;text-align: left;
   }
-`
+`;
 
 class Home extends React.Component<{},{ recList?:object,newSongList?:object }> {
     constructor(props:any) {

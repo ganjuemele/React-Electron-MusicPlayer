@@ -10,7 +10,7 @@ const NavLi = styled.aside`
     padding: 45px 8px 0 8px;
     font-size: 12px;
     text-align: start;
-    position: fixed;
+    //position: fixed;
     > p {
       color: #888;
       margin: 10px 0;

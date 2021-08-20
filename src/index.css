@@ -39,3 +39,6 @@ button {
   display: block;
   clear: both;
 }
+.flex {
+  display: flex;
+}

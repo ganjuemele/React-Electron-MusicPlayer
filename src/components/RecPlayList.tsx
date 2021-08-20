@@ -90,7 +90,16 @@ class RecPlayList extends React.Component<any> {
                  </div>
                  <ul>
                      {this.props.list.map((item:any, index:number) =>
-                         <li key={index} >
+                         <li key={index} onClick={()=> {
+                             window.alert(JSON.stringify(item))
+                                this.props.history.push({
+                                    pathname: 'playListDetail',
+                                    query: {
+                                        id: item.id
+                                    }
+                                })
+                            }
+                         }>
                              <div>
                                  <img src={item.coverImgUrl} alt=""/>
                              </div>
