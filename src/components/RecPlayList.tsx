@@ -7,7 +7,7 @@ import ReactDOM from "react-dom"
 const RecommendPlaylist= styled.div`
   width:750px;
   .recPlaylist {
-    display:flex;justify-content:space-between;align-items:flex-end;height:30px;
+    align-items:flex-end;height:30px;
     > p {
       font-weight:bold;font-size:24px;line-height:24px;
     }
@@ -16,10 +16,8 @@ const RecommendPlaylist= styled.div`
     }
   }
   ul {
-    display: flex;
     margin: 40px 0;
     font-size: 12px;
-    justify-content: space-between;
     flex-wrap: wrap;
     li {
       width: 168px;
@@ -45,7 +43,7 @@ const RecommendPlaylist= styled.div`
       width: 360px;
       height: 240px;
       position: relative;
-      div {
+      a {
         width: 360px;
         display: flex;
         border-radius: 5px;
@@ -57,7 +55,7 @@ const RecommendPlaylist= styled.div`
         width: 360px;
         height: 360px;
       }
-      a {
+      p {
         display: flex;
         width: 100%;
         height: 60px;
@@ -84,28 +82,29 @@ class RecPlayList extends React.Component<any> {
     render(){
         return (
             <RecommendPlaylist>
-                 <div className="recPlaylist">
+                 <div className="justifyBetween recPlaylist">
                      <p>推荐歌单</p>
                      <NavLink to="/#">{'全部 >'}</NavLink>
                  </div>
-                 <ul>
-                     {this.props.list.map((item:any, index:number) =>
-                         <li key={index} onClick={()=> {
-                             window.alert(JSON.stringify(item))
-                                this.props.history.push({
-                                    pathname: 'playListDetail',
-                                    query: {
-                                        id: item.id
-                                    }
-                                })
+                 <ul className="justifyBetween">
+                     {this.props.list.map((item:any) =>
+                         <li key={item.id} onClick={()=> {
+                             // window.alert(JSON.stringify(item))
+                             //    hashHistory.push({
+                             //        pathname: 'playlist',
+                             //        query: {
+                             //            id: item.id
+                             //        }
+                             //    })
                             }
                          }>
-                             <div>
-                                 <img src={item.coverImgUrl} alt=""/>
-                             </div>
-                             <NavLink to="/#">
-                                 {item.name}
+                             <NavLink to={'/playlist/'+item.id}>
+                                 <div>
+                                     <img src={item.coverImgUrl} alt=""/>
+                                 </div>
+                                 <p>{item.name}</p>
                              </NavLink>
+
                          </li>
                      )}
                  </ul>

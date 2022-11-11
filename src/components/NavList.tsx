@@ -7,10 +7,11 @@ const NavLi = styled.aside`
     width: 176px;
     background-color: #ddd;
     height: 100%;
+    max-height: 800px;
     padding: 45px 8px 0 8px;
     font-size: 12px;
     text-align: start;
-    //position: fixed;
+    position: fixed;
     > p {
       color: #888;
       margin: 10px 0;
@@ -19,9 +20,7 @@ const NavLi = styled.aside`
       padding: 10px 20px 10px 15px;
       color: #333;
       margin: 3px 0;
-      display: flex;
       justify-content: start;
-      align-items: center;
       border-radius: 3px;
       height: 100%;
       width: 100%;
@@ -44,7 +43,7 @@ const asideList = [
     {url: '/playlist', name: '歌单'},
     {url: '/rank', name: '排行榜'},
     {url: '/fav', name: '我的收藏'},
-    {url: '/#', name: '最近播放'}
+    {url: '/recent', name: '最近播放'}
 ]
 
 const NavList = ()=> {
@@ -55,7 +54,7 @@ const NavList = ()=> {
                 <ul>
                     {asideList.map(tag =>
                         <li key={tag.name} >
-                            <NavLink to={tag.url} activeClassName="selected">
+                            <NavLink to={tag.url} className="alignCenter" activeClassName="selected">
                                 {tag.name}
                             </NavLink>
                         </li>

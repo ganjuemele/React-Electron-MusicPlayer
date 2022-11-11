@@ -16,18 +16,14 @@ import {
 } from "../icon/icon"
 
 const CtrlBar = styled.div`
-  width:100vw;
+  width: 100%;
   height:72px;
   background-color: rgba(255,255,255,.96);
   //filter: blur(.5px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   bottom: 0;
   z-index: 100;
   >.ctrl-music-inf {
-    display: flex;align-items: center;
     > .ctrl-music-img {
       height:72px;
       width:72px;
@@ -70,9 +66,6 @@ const CtrlBar = styled.div`
     }
   }
   > .musicCtrl {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 72px;
     .musicCut {
       width: 20px;
@@ -85,8 +78,6 @@ const CtrlBar = styled.div`
     }
   }
   > .musicCtrlRight {
-    display: flex;
-    align-items:center;
     height: 72px;
     justify-content: flex-end;
     padding-right: 28px;
@@ -117,8 +108,8 @@ const CtrlBar = styled.div`
 
 const ControlBar = ()=> {
     return (
-        <CtrlBar>
-            <div className="ctrl-music-inf">
+        <CtrlBar className="alignCenter justifyBetween">
+            <div className="alignCenter ctrl-music-inf">
                 <div className="ctrl-music-img">
                     <img src="#" alt=""/>
                 </div>
@@ -134,7 +125,7 @@ const ControlBar = ()=> {
                     <SVG d={musicMore} />
                 </div>
             </div>
-            <div className="musicCtrl">
+            <div className="musicCtrl justifyCenter alignCenter">
                 <div id="prev"><SVG className="musicCut" d={musicPrev} fill="#707070" /></div>
                 <div id="play">
                     {/*<SVG className="musicPlay" name="musicPause" fill="#ff3300"/>*/}
@@ -143,7 +134,7 @@ const ControlBar = ()=> {
                 <div id="next"><SVG className="musicCut" d={musicNext} fill="#707070"/></div>
             </div>
 
-            <div className="musicCtrlRight">
+            <div className="musicCtrlRight alignCenter">
                 <div>
                     <SVG className="icon musicSound" d={musicSound} fill="#707070"/>
                 </div>

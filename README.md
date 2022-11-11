@@ -119,3 +119,9 @@ builder.build({
 "electron-build": "npm run build && node build.js"
 ```
 `npm run electron-build`
+
+```
+    yarn start
+or
+    yarn electron-start
+```
