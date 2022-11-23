@@ -50,7 +50,7 @@ class Home extends React.Component<{},{ recList?:object,newSongList?:object }> {
     render() {
         return (
             <HomeBody className="alignCenter">
-                <SearchBar_Head></SearchBar_Head>
+                {/*<SearchBar_Head></SearchBar_Head>*/}
                      {/*<div className="lunbotu"></div>*/}
                 <FourEntry/>
 

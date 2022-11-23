@@ -126,28 +126,28 @@ const ControlBar = ()=> {
                 </div>
             </div>
             <div className="musicCtrl justifyCenter alignCenter">
-                <div id="prev"><SVG className="musicCut" d={musicPrev} fill="#707070" /></div>
+                <div id="prev"><SVG className="musicCut" d={musicPrev} /></div>
                 <div id="play">
                     {/*<SVG className="musicPlay" name="musicPause" fill="#ff3300"/>*/}
-                    <SVG className="musicPlay" fill="#ff3300" d={musicPlay}/>
+                    <SVG className="musicPlay" d={musicPlay} />
                 </div>
-                <div id="next"><SVG className="musicCut" d={musicNext} fill="#707070"/></div>
+                <div id="next"><SVG className="musicCut" d={musicNext} /></div>
             </div>
 
             <div className="musicCtrlRight alignCenter">
                 <div>
-                    <SVG className="icon musicSound" d={musicSound} fill="#707070"/>
+                    <SVG className="icon musicSound" d={musicSound} />
                 </div>
 
                 <div>
-                    <SVG className="icon musicCircle" d={musicCircle} fill="#707070" />
+                    <SVG className="icon musicCircle" d={musicCircle} />
 {/* todo 单曲循环需要在列表循环多加一个path <path d="M533.333333 597.333333v-170.666666c0-12.8-8.533333-21.333333-21.333333-21.333334s-21.333333 8.533333-21.333333 21.333334v170.666666c0 12.8 8.533333 21.333333 21.333333 21.333334s21.333333-8.533333 21.333333-21.333334z"*/}
                 </div>
                 <div>
-                    <SVG className="icon musicEffects" d={musicEffects} fill="#707070"/>
+                    <SVG className="icon musicEffects" d={musicEffects} />
                 </div>
                 <div>
-                    <SVG className="icon musicWords" d={musicWords} fill="#707070" />
+                    <SVG className="icon musicWords" d={musicWords}  />
                 </div>
                 <div>
                     <SVG className="icon musicList" d={musicList}/>
