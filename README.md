@@ -122,6 +122,6 @@ builder.build({
 
 ```
     yarn start
-or
+再执行
     yarn electron-start
 ```

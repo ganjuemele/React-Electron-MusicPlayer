@@ -1,7 +1,7 @@
 import {NavLink} from "react-router-dom";
 import React from "react";
 import styled from "styled-components";
-import ReactDOM from "react-dom"
+// import ReactDOM from "react-dom"
 
 
 const RecommendPlaylist= styled.div`
@@ -76,9 +76,9 @@ const RecommendPlaylist= styled.div`
 `
 
 class RecPlayList extends React.Component<any> {
-    constructor(props:object) {
-        super(props);
-    }
+    // constructor(props:object) {
+    //     super(props);
+    // }
     render(){
         return (
             <RecommendPlaylist>

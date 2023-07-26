@@ -3,15 +3,18 @@ import React from "react";
 import {NavLink} from "react-router-dom"
 
 const NavLi = styled.aside`
-  > div {
+    box-sizing: border-box;
+    * {
+      box-sizing: border-box;
+    }
     width: 176px;
     background-color: #ddd;
     height: 100%;
-    max-height: 800px;
     padding: 45px 8px 0 8px;
     font-size: 12px;
     text-align: start;
     position: fixed;
+    top: 0;
     > p {
       color: #888;
       margin: 10px 0;
@@ -35,7 +38,6 @@ const NavLi = styled.aside`
       background-color: orangered;
       color: #fff;
     }
-  }
 `
 
 const asideList = [
@@ -49,18 +51,16 @@ const asideList = [
 const NavList = ()=> {
     return (
         <NavLi>
-            <div>
-                <p>我的音乐</p>
-                <ul>
-                    {asideList.map(tag =>
-                        <li key={tag.name} >
-                            <NavLink to={tag.url} className="alignCenter" activeClassName="selected">
-                                {tag.name}
-                            </NavLink>
-                        </li>
-                    )}
-                </ul>
-            </div>
+            <p>我的音乐</p>
+            <ul>
+                {asideList.map(tag =>
+                    <li key={tag.name} >
+                        <NavLink to={tag.url} className="alignCenter" activeClassName="selected">
+                            {tag.name}
+                        </NavLink>
+                    </li>
+                )}
+            </ul>
         </NavLi>
     )
 }

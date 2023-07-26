@@ -4,7 +4,7 @@ import React from "react";
 import FourEntry from "../components/FourEntry";
 import RecPlayList from "../components/RecPlayList";
 import SingleMusic from "../components/SingleMusic";
-import SearchBar_Head from "../components/SearchBar";
+// import SearchBar_Head from "../components/SearchBar";
 import axios from 'axios'
 
 const HomeBody = styled.div`

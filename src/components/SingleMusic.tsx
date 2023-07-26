@@ -68,9 +68,9 @@ const NewSongPlaylist= styled.div`
 `
 
 class SingleMusic extends React.Component<any> {
-    constructor(props:object) {
-        super(props);
-    }
+    // constructor(props:object) {
+    //     super(props);
+    // }
     render(){
         return (
             <NewSongPlaylist>
@@ -85,14 +85,14 @@ class SingleMusic extends React.Component<any> {
                             <div className="div-icon justifyCenter alignCenter">
                                 <SVG className="icon" d={newMusicPlay}/>
                             </div>
-                            <div className={'singleMusic'+'-item-info'}>
-                                <div className={'singleMusic'+'-name'}>{item.name}</div>
-                                <div className={'singleMusic'+'-artist'}>
-                                    {item.artists.map((artist:any, i:number) =>
-                                        <span key={artist.name+i}>{i!==0?' / ':''}{artist.name}</span>
-                                    )}
-                                </div>
-                            </div>
+                            {/*<div className={'singleMusic'+'-item-info'}>*/}
+                            {/*    <div className={'singleMusic'+'-name'}>{item.name}</div>*/}
+                            {/*    <div className={'singleMusic'+'-artist'}>*/}
+                            {/*        {item.artists.map((artist:any, i:number) =>*/}
+                            {/*            <span key={artist.name+i}>{i!==0?' / ':''}{artist.name}</span>*/}
+                            {/*        )}*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
                         </li>
                     )}
                 </ul>

@@ -1,15 +1,15 @@
 import './App.css';
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components"
 import {HashRouter as Router, Switch, Route, Redirect, NavLink} from "react-router-dom"
 import ControlBar from "./components/ControlBar"
 import NavList from "./components/NavList"
 import Home from "./views/Home"
 import PlaylistDetail from "./components/PlaylistDetail"
-import LoginBox from "./components/LoginBox"
-import SearchBar_Head from "./components/SearchBar";
+// import login from "./components/SearchBar";
 
-const AppWrapper = styled.div`
+// let SearchBar_Head = login.SearchBar_Head;
+const AppWrapper = styled.aside`
   position: relative;
   color: #333;
   .flex {
@@ -21,51 +21,31 @@ const AppWrapper = styled.div`
 `;
 
 function App() {
-    // const [onCloseLoginBox, setClose] = useState(false)
-    // let closeSwitch = () => {
-    //     setClose(onCloseLoginBox => !onCloseLoginBox)
-    //     console.log(onCloseLoginBox)
-    // }
-    let onCloseLoginBox = false
     return (
         <AppWrapper>
-            <SearchBar_Head/>
+            {/*<SearchBar_Head  />*/}
 
-            <LoginBox onCloseLoginBox={onCloseLoginBox}/>
+            <Router>
+                <Switch>
+                    <NavList/>
+                </Switch>
+            </Router>
             <Router>
                 <Switch>
                     <Route path="/home">
-                        <ControlBar/>
-                        <div className="flex">
-                            <NavList/>
-                            <Home/>
-                        </div>
+                        <Home/>
                     </Route>
-                    {/*playListDetail*/}
                     <Route path="/playlist/:id">
-                        <ControlBar/>
-                        <div className="flex">
-                            <NavList/>
-                            <PlaylistDetail/>
-                        </div>
+                        <PlaylistDetail/>
                     </Route>
                     <Route path="/rank">
-                        <ControlBar/>
-                        <div className="flex">
-                            <NavList/>
-                        </div>
+
                     </Route>
                     <Route path="/fav">
-                        <ControlBar/>
-                        <div className="flex">
-                            <NavList/>
-                        </div>
+
                     </Route>
                     <Route path="/recent">
-                        <ControlBar/>
-                        <div className="flex">
-                            <NavList/>
-                        </div>
+
                     </Route>
                     <Redirect exact from="/" to="/home"/>
 
@@ -73,6 +53,8 @@ function App() {
                 </Switch>
 
             </Router>
+
+            <ControlBar/>
         </AppWrapper>
     );
 }
